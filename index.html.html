@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高知東部・お墓参りと絶景グルメ旅程</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 1. THE SETUP */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            display: grid;
+            gap: 40px;
+            grid-template-columns: 1fr;
+            margin: 0;
+            min-height: 100vh;
+            padding: 40px 0;
+            place-items: center;
+        }
+
+        .slide-container {
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            font-family: 'Noto Sans JP', sans-serif;
+            height: 720px;
+            justify-content: center;
+            overflow: hidden;
+            padding: 60px;
+            position: relative;
+            width: 1280px;
+        }
+
+        .slide-container::before {
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 0;
+        }
+
+        .slide-container > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        p {
+            margin: 0;
+            margin-bottom: 15px;
+        }
+
+        /* 2. TYPOGRAPHY */
+        .slide-container h1,
+        .slide-container h2,
+        .slide-container h3 {
+            color: #0f172a;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .slide-container p,
+        .slide-container li,
+        .slide-container .subtitle {
+            color: #334155;
+            font-weight: 400;
+        }
+
+        .slide-container h1 {
+            font-size: 64px;
+            line-height: 1.2;
+            letter-spacing: 0.05em;
+        }
+
+        .slide-container .slide-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: left;
+            width: 100%;
+            color: #0284c7;
+            border-bottom: 3px solid #e0f2fe;
+            padding-bottom: 10px;
+        }
+
+        .slide-container h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #0f766e;
+        }
+
+        .slide-container p,
+        .slide-container li,
+        .slide-container .subtitle {
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        .slide-container .subtitle {
+            font-size: 24px;
+            margin: 20px auto;
+            color: #0284c7;
+            font-weight: 500;
+        }
+
+        .slide-container .content-area {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: center;
+            width: 100%;
+        }
+
+        /* 3. LAYOUTS */
+        /* Full Background Image */
+        .full-bg-image {
+            background-position: center;
+            background-size: cover;
+        }
+        .full-bg-image .content-overlay {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 50px 80px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .full-bg-image h1 {
+            color: #0f172a;
+        }
+        
+        /* Section Title */
+        .section-title-layout {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+        }
+        .section-title-layout h2 {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: #0284c7;
+        }
+        .section-title-layout p {
+            font-size: 26px;
+            color: #475569;
+        }
+        .section-title-layout hr {
+            background-color: #0ea5e9;
+            border: none;
+            height: 6px;
+            margin: 30px auto;
+            width: 120px;
+            border-radius: 3px;
+        }
+
+        /* Two Column & Bullet Points */
+        .two-column {
+            align-items: flex-start;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            width: 100%;
+        }
+        .two-column ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .two-column li {
+            margin-bottom: 24px;
+            padding-left: 35px;
+            position: relative;
+        }
+        .two-column li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #0ea5e9;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 20px;
+        }
+
+        .image-wrapper {
+            border-radius: 16px;
+            height: 400px;
+            max-width: 100%;
+            overflow: hidden;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .image-wrapper img {
+            height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        /* Tiled Text With Icons */
+        .tiled-content {
+            align-items: stretch;
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            width: 100%;
+        }
+        .tile {
+            align-items: center;
+            background-color: #f8fafc;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content: flex-start;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+        .tile .icon {
+            color: #0ea5e9;
+            font-size: 54px;
+            margin-bottom: 25px;
+        }
+        .tile h3 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        /* Timeline Layout */
+        .timeline-layout {
+            align-items: stretch;
+            display: flex;
+            height: 100%;
+            justify-content: space-between;
+            position: relative;
+            width: 100%;
+            margin-top: 60px;
+        }
+        .timeline-layout .timeline-line {
+            background-color: #cbd5e1;
+            height: 6px;
+            left: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-3px);
+            width: 100%;
+            z-index: 0;
+            border-radius: 3px;
+        }
+        .timeline-item {
+            position: relative;
+            text-align: center;
+            flex: 1;
+            padding: 0 10px;
+        }
+        .timeline-item::after {
+            background-color: #ffffff;
+            border-radius: 50%;
+            border: 6px solid #0ea5e9;
+            content: '';
+            height: 28px;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 28px;
+            z-index: 1;
+        }
+        .timeline-item .content-wrapper {
+            left: 0;
+            position: absolute;
+            width: 100%;
+        }
+        .timeline-item:nth-child(odd) .content-wrapper {
+            bottom: 50%;
+            margin-bottom: 35px;
+        }
+        .timeline-item:nth-child(even) .content-wrapper {
+            margin-top: 35px;
+            top: 50%;
+        }
+        .timeline-item h3 {
+            color: #0284c7;
+            font-size: 24px;
+            font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+            margin-bottom: 10px;
+        }
+        .timeline-item p {
+            font-size: 18px;
+        }
+
+        /* Bleed Image Right Layout */
+        .slide-container.bleed-image-layout {
+            align-items: start;
+            display: grid;
+            gap: 50px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            padding: 0;
+        }
+        .slide-container.bleed-image-layout > .content-container {
+            padding: 60px 0 60px 60px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+        }
+        .slide-container.bleed-image-layout > .image-container {
+            height: 100%;
+            overflow: hidden;
+            width: 100%;
+        }
+        .slide-container.bleed-image-layout img.bleed-image-side {
+            display: block;
+            height: 720px;
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+        }
+        .slide-container.bleed-image-layout .bleed-text-side p {
+            color: #334155;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Rounded Image Layout */
+        .rounded-image-layout {
+            align-items: center;
+        }
+        .rounded-image-layout .image-wrapper {
+            border-radius: 50%;
+            flex-shrink: 0;
+            height: 450px;
+            width: 450px;
+            max-width: 450px;
+            margin: 0 auto;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        /* Tiled Images */
+        .image-tile {
+            flex: 1;
+            text-align: center;
+        }
+        .image-tile .image-wrapper {
+            height: 250px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+        }
+        .image-tile h4 {
+            color: #0f766e;
+            font-size: 22px;
+            margin: 0 0 10px 0;
+        }
+        .image-tile p {
+            font-size: 17px;
+        }
+
+        /* Q&A Layout */
+        .qa-layout {
+            margin: 0 auto;
+            text-align: center;
+            width: 100%;
+        }
+        .qa-layout h2 {
+            font-size: 70px;
+            margin-bottom: 25px;
+            color: #0284c7;
+        }
+        .qa-layout p {
+            font-size: 26px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container full-bg-image" style="background-image: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.4)), url('https://images.unsplash.com/photo-1596420556637-2fb079b7b919?q=80&w=2070&auto=format&fit=crop');">
+        <div class="content-overlay">
+            <h1>高知東部・お墓参りと<br>絶景グルメ旅程</h1>
+            <p class="subtitle">8月25日〜8月27日 | 2泊3日のご家族旅行</p>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">旅のコンセプト</h2>
+        <div class="content-area">
+            <div class="tiled-content">
+                <div class="tile">
+                    <div class="icon"><i class="fa-solid fa-users"></i></div>
+                    <h3>ご家族でのひととき</h3>
+                    <p>お墓参りを中心に、ご家族でゆっくりと語り合い、絆を深めるための大切な時間を過ごします。</p>
+                </div>
+                <div class="tile">
+                    <div class="icon"><i class="fa-solid fa-utensils"></i></div>
+                    <h3>絶品の高知グルメ</h3>
+                    <p>安芸の生しらす、室戸のキンメ丼、奈半利のまぐろなど、東部ならではの新鮮な海の幸を堪能します。</p>
+                </div>
+                <div class="tile">
+                    <div class="icon"><i class="fa-solid fa-camera-retro"></i></div>
+                    <h3>息を呑む絶景と自然</h3>
+                    <p>室戸岬のダイナミックな景観や、モネの庭、伊尾木洞など、神秘的で美しい自然に触れる体験を。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <div class="section-title-layout">
+            <hr>
+            <h2>Day 1: 高知到着と海の幸</h2>
+            <p>8月25日（日） - 安芸から奈半利へ</p>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">1日目のスケジュール</h2>
+        <div class="content-area">
+            <div class="timeline-layout">
+                <div class="timeline-line"></div>
+                <div class="timeline-item">
+                    <div class="content-wrapper">
+                        <h3>11:00 空港到着</h3>
+                        <p>高知龍馬空港到着。<br>レンタカーの手続きを済ませて出発。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="content-wrapper">
+                        <h3>12:00 昼食</h3>
+                        <p>安芸しらす食堂 本店にて、<br>新鮮な「生しらす丼」を満喫。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="content-wrapper">
+                        <h3>13:30 お墓参り</h3>
+                        <p>安田町周辺へ。<br>ご家族でゆっくりとお参りを。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="content-wrapper">
+                        <h3>15:00 チェックイン</h3>
+                        <p>ホテルなはり到着。<br>大浴場で移動の疲れを癒やします。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container bleed-image-layout">
+        <div class="content-container">
+            <h2 class="slide-title" style="border-bottom:none; margin-bottom:10px;">鮮度抜群！絶品の生しらす</h2>
+            <div class="content-area">
+                <div class="bleed-text-side">
+                    <h3>安芸しらす食堂 本店</h3>
+                    <p>高知龍馬空港から東へ向かう最初の目的地は、安芸市の名物である「生しらす」です。</p>
+                    <p>水揚げされたばかりの新鮮なしらすは、臭みがなく、とろけるような甘みが特徴です。高知ならではの海の幸を、まずは特製ダレをかけた丼で贅沢に堪能しましょう。</p>
+                </div>
+            </div>
+        </div>
+        <div class="image-container">
+            <img class="bleed-image-side" src="https://images.unsplash.com/photo-1615873994361-9c6bc7390a4d?q=80&w=1964&auto=format&fit=crop" alt="海鮮丼のイメージ">
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">くつろぎの夕食と団欒</h2>
+        <div class="content-area">
+            <div class="two-column rounded-image-layout">
+                <div>
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?q=80&w=2070&auto=format&fit=crop" alt="お刺身のイメージ">
+                    </div>
+                </div>
+                <div>
+                    <h3>ホテルなはり 自慢の海鮮料理</h3>
+                    <p>長距離移動とお墓参りを終え、ホテルなはりの大浴場で疲れを癒やした後は、お待ちかねの夕食です。</p>
+                    <p>ホテル内のレストランで、地元で獲れた新鮮なまぐろ料理など、絶品の海鮮をご用意。移動の必要がないため、皆様で気兼ねなくお酒を囲み、乾杯のひとときをお過ごしいただけます。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <div class="section-title-layout">
+            <hr>
+            <h2>Day 2: 室戸の大自然とユニーク体験</h2>
+            <p>8月26日（月） - 室戸岬ドライブルート</p>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">2日目のスケジュール</h2>
+        <div class="content-area">
+            <div class="timeline-layout">
+                <div class="timeline-line"></div>
+                <div class="timeline-item">
+                    <div class="content-wrapper">
+                        <h3>10:45 水族館見学</h3>
+                        <p>ホテルを出発し、海沿いドライブ。<br>「むろと廃校水族館」へ。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="content-wrapper">
+                        <h3>12:30 昼食</h3>
+                        <p>室戸の老舗「料亭 花月」にて<br>名物「室戸キンメ丼」を堪能。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="content-wrapper">
+                        <h3>14:00 室戸岬散策</h3>
+                        <p>ダイナミックな岩礁風景と<br>太平洋を眺めながら遊歩道を散策。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="content-wrapper">
+                        <h3>18:30 夕食</h3>
+                        <p>ホテル帰着・休憩後、<br>イタリア食堂トンノで夕食。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">室戸ドライブのハイライト</h2>
+        <div class="content-area">
+            <div class="tiled-content">
+                <div class="image-tile">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1544552866-d3ed42536fcb?q=80&w=2076&auto=format&fit=crop" alt="水族館のイメージ"></div>
+                    <h4>むろと廃校水族館</h4>
+                    <p>旧小学校を改装したユニークな施設。学校の屋外プールで優雅に泳ぐウミガメなど、童心に帰る楽しい展示が魅力です。</p>
+                </div>
+                <div class="image-tile">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1576402425032-47535567554e?q=80&w=1969&auto=format&fit=crop" alt="海鮮のイメージ"></div>
+                    <h4>極上 室戸キンメ丼</h4>
+                    <p>室戸沖で獲れた新鮮な金目鯛を贅沢に使用。照り焼きと刺身が乗った丼に、最後は金目鯛の出汁でお茶漬けにして二度美味しい逸品です。</p>
+                </div>
+                <div class="image-tile">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1555562762-cb2726f1c7d2?q=80&w=2071&auto=format&fit=crop" alt="岬のイメージ"></div>
+                    <h4>ダイナミックな室戸岬</h4>
+                    <p>雄大な太平洋と、隆起してできた奇岩が連なる岩礁風景。潮風を感じながら、整備された遊歩道でのんびりと腹ごなしの散策を。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <div class="section-title-layout">
+            <hr>
+            <h2>Day 3: 芸術と神秘の自然</h2>
+            <p>8月27日（火） - 北川村から安芸へ</p>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">3日目のスケジュール</h2>
+        <div class="content-area">
+            <div class="timeline-layout">
+                <div class="timeline-line"></div>
+                <div class="timeline-item">
+                    <div class="content-wrapper">
+                        <h3>10:30 庭園散策</h3>
+                        <p>チェックアウト後、北川村<br>「モネの庭」マルモッタンへ。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="content-wrapper">
+                        <h3>12:00 昼食</h3>
+                        <p>庭園併設のカフェ、または<br>安田町周辺で軽めのランチ。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="content-wrapper">
+                        <h3>13:30 洞窟探検</h3>
+                        <p>安芸市の「伊尾木洞」へ。<br>シダ植物に覆われた神秘の空間。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="content-wrapper">
+                        <h3>15:30 空港到着</h3>
+                        <p>高知龍馬空港へ。<br>レンタカーを返却し、帰路へ。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container bleed-image-layout">
+        <div class="content-container">
+            <h2 class="slide-title" style="border-bottom:none; margin-bottom:10px;">色彩豊かな風景式庭園</h2>
+            <div class="content-area">
+                <div class="bleed-text-side">
+                    <h3>北川村「モネの庭」マルモッタン</h3>
+                    <p>フランス・ジヴェルニーにある印象派画家クロード・モネの庭を再現した、世界で唯一「モネ」を冠することが許された庭園です。</p>
+                    <p>絵画のように美しい睡蓮が浮かぶ池や、季節ごとに咲き誇る色彩豊かな花々を眺めながら、ゆったりとした優雅な朝の散策をお楽しみください。</p>
+                </div>
+            </div>
+        </div>
+        <div class="image-container">
+            <img class="bleed-image-side" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2074&auto=format&fit=crop" alt="庭園のイメージ">
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">神秘的な緑の世界へ</h2>
+        <div class="content-area">
+            <div class="two-column">
+                <div>
+                    <ul>
+                        <li>旅の締めくくりは、安芸市にある国の天然記念物「伊尾木洞」へ向かいます。</li>
+                        <li>数万年の歳月をかけて波の浸食により形成された洞窟を抜けると、そこには一面緑の世界が広がっています。</li>
+                        <li>壁面を覆い尽くす多種多様なシダ植物は、まるで古代にタイムスリップしたかのような神秘的な空間を作り出しています。</li>
+                        <li>ひんやりと涼しく、マイナスイオンたっぷりの空気の中で、旅の最後にちょっとした探検気分を満喫してください。</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1522069213448-443a614da9b6?q=80&w=2073&auto=format&fit=crop" alt="洞窟とシダ植物のイメージ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <div class="qa-layout">
+            <h2>気をつけていってらっしゃいませ</h2>
+            <p>高知東部での3日間、ご家族で素晴らしい思い出ができますように。</p>
+        </div>
+    </div>
+
+</body>
+</html>
+```
